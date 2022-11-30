@@ -799,3 +799,12 @@ pre{
 #menu-item-9915 a:hover{
     color: #c80000;
 }
+
+#ad{
+    border: 1px solid #eeeeee;
+    width: 746px;
+    min-height: 95px;
+    display: block;
+    margin: 0 auto;
+    padding: 8px 6px 2px 6px;
+}
