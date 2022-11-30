@@ -1,10 +1,42 @@
 var yt = 0;
-var ad = "<iframe data-aa='1922114' src='//acceptable.a-ads.com/1922114' style='border:0; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>";
+var ca = 0;
+var randomY = Math.floor(Math.random() * 5);
+var randomZ = Math.floor(Math.random() * 5);
+var ad0 = '<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3582481470587145" data-ad-slot="4725587499"></ins>';
+/*var ad1 = "<iframe class='a-ads' data-aa='1922114' src='//ad.a-ads.com/1922114?size=728x90' style='width:728px;height:90px;border:0;padding:0;overflow:hidden;background-color:transparent;'></iframe>";*/
+var ad1 = "<iframe data-aa='1922114' src='//acceptable.a-ads.com/1922114' style='border:0; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>";
+var ad2 = '<div id="adm-container-1200" style="padding-bottom:6px;"></div>';
+var temp;
+if(randomY == 3 || randomY == 4 || randomY == 5){
+   if(document.getElementById('ggfooter')){
+      document.getElementById('ggfooter').innerHTML = ad1;
+   }
+}/*else if(randomY == 5){
+    if(document.getElementById('ggfooter')){
+        ca = 1;
+        document.getElementById('ggfooter').innerHTML = ad2;
+        if(ca != 0){
+            appendScript(ca);
+        }
+    }
+}*/
 if(window.location.href.indexOf('force-13.com/cyclone-tracker') != -1){
+    if(randomZ <= 2){
+        ca = 2;
+        temp = ad0;
+    }else if(randomZ == 3 || randomZ == 4 || randomZ == 5){
+        temp = ad1;
+    }/*else if(randomZ == 5){
+        ca = 1;
+        temp = ad2;
+    }*/
     if(document.getElementById('commentform')){
         document.getElementById('commentform').innerHTML += '<span style="display:block;width:100%;margin:0 auto;text-align:center;color:#cccccc;">ADVERTISEMENT</span>' +
             '<div style="border: 1px solid #dddddd;width: 746px;min-height: 95px;display: block;margin: 0 auto 25px auto;padding: 8px 6px 2px 6px;">' +
-            ad + '</div>';
+            temp + '</div>';
+        if(ca != 0){
+            appendScript(ca);
+        }
     }
     if(document.getElementById('layer01')){
         document.getElementById('layer01').style.display = 'block';
@@ -122,18 +154,46 @@ var monitor = setInterval(function(){
         clearInterval(monitor);
         if(yt == 0){
             yt = 1;
+            if(randomZ <= 2){
+                ca = 2;
+                temp = ad0;
+            }else if(randomZ == 3 || randomZ == 4 || randomZ == 5){
+                temp = ad1;
+            }/*else if(randomZ == 5){
+                ca = 1;
+                temp = ad2;
+            }*/
             if(document.getElementById('yt-ad')){
                 var width = document.querySelector('.entry-content').offsetWidth;
                 if(width >= 800){
                     document.getElementById('yt-ad').innerHTML = '<br><span style="display:block;width:100%;margin:0 auto;text-align:center;color:#cccccc;">ADVERTISEMENT</span>' +
                         '<div style="border: 1px solid #dddddd;width: 746px;min-height: 95px;display: block;margin: 0 auto 25px auto;padding: 8px 6px 2px 6px;">' +
-                        ad + '</div>';
+                        temp + '</div>';
                 }else{
                     document.getElementById('yt-ad').innerHTML = '<br><span style="display:block;width:100%;margin:0 auto;text-align:center;color:#cccccc;">ADVERTISEMENT</span>' +
                         '<div style="border: 1px solid #dddddd;width: 100%;min-height: 95px;display: block;margin: 0 auto 25px auto;padding: 8px 0 2px 0;">' +
-                        ad + '</div>';
+                        temp + '</div>';
+                }
+                if(ca != 0){
+                    appendScript(ca);
                 }
             }
         }
     }
 }, 100);
+function callGoogle(){
+    (adsbygoogle = window.adsbygoogle || []).push({});
+}
+function appendScript(x){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    if(x == 1){
+        script.src = '//coinad.org/display/items.php?1200&187&728&90&4&0&0';
+    }else if(x == 2){
+        script.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3582481470587145';
+    }
+    document.head.appendChild(script);
+    if(x == 2){
+        callGoogle();
+    }
+}
