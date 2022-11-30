@@ -1,3 +1,4 @@
+console.log('test');
 var yt = 0;
 /*var ad = "<iframe class='a-ads' data-aa='1922114' src='//ad.a-ads.com/1922114?size=728x90' style='width:728px;height:90px;border:0;padding:0;overflow:hidden;background-color:transparent;'></iframe>";*/
 var ad = "<iframe data-aa='1922114' src='//acceptable.a-ads.com/1922114' style='border:0; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>";
