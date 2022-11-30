@@ -1,8 +1,7 @@
-console.log('test');
 var yt = 0;
-/*var ad = "<iframe class='a-ads' data-aa='1922114' src='//ad.a-ads.com/1922114?size=728x90' style='width:728px;height:90px;border:0;padding:0;overflow:hidden;background-color:transparent;'></iframe>";*/
 var ad = "<iframe data-aa='1922114' src='//acceptable.a-ads.com/1922114' style='border:0; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>";
-if(window.location.href.indexOf('force-13.com/cyclone-tracker') != -1){
+function pushPage(){
+    if(window.location.href.indexOf('force-13.com/cyclone-tracker') != -1){
     if(document.getElementById('commentform')){
         document.getElementById('commentform').innerHTML += '<span style="display:block;width:100%;margin:0 auto;text-align:center;color:#cccccc;">ADVERTISEMENT</span>' +
             '<div style="border: 1px solid #dddddd;width: 746px;min-height: 95px;display: block;margin: 0 auto 25px auto;padding: 8px 6px 2px 6px;">' +
@@ -139,3 +138,4 @@ var monitor = setInterval(function(){
         }
     }
 }, 100);
+}
